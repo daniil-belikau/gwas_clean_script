@@ -71,7 +71,7 @@ $ gwas_launch_script.sh {trait_name} {path_to_args.json_file} {approximate_size_
 ## Argument JSON file:
 ### General rules:
 * If you don't have a value for a field, set it to ```false```.
-* If parsing values (e.g. chromosome and bair pair) from a column that contains combined values, set the column name field for that value to ```false```.
+* If parsing values from a column that contains combined values, set the column name field for that value to ```false``` (e.g. there is a column that contains ```{chr}:{bp}:{rsid}```, set ```"chr"```, ```"bp"```, and ```"rsid"``` fields to ```false```).
 
 ### Field descriptions:
 * **chr** - name of chromosome column.
