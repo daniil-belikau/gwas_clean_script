@@ -22,7 +22,7 @@ $ python3 gwas_process.py {path_to_args.json_file}
 $ singularity pull --force --name gwas_pipeline.sif docker://daniil4dennislab/gwas_pipeline:latest
 ```
 ```bash
-$ gwas_launch_script.sh {trait_name} {path_to_args.json_file} {approximate_size_of_summ_stat_file_in_Gb}
+$ ./gwas_launch_script.sh {trait_name} {path_to_args.json_file} {approximate_size_of_summ_stat_file_in_Gb}
 ```
 *Modify the paths in **gwas_launch_script.sh** to work on your system.
 
