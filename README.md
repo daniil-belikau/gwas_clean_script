@@ -47,8 +47,10 @@ $ ./gwas_launch_script.sh {trait_name} {path_to_args.json_file} {approximate_siz
 * Standardization:
   * Standardize names of core columns.
   * Fill in missing rsid, chromosome, base pair information based on 1000 Genomes P3 VCF.
-  * Attempt to rescue palindromic SNPs.
   * Report SNP effect with respect to the Alternative allele with the highest frequency in 1000 Genomes P3 (Primary GWAS population).
+  * Attempt to rescue palindromic SNPs.
+    * If a common coordinate strand is used for all GWAS SNPs, the effect allele for palindromic SNPs can be easily determined.
+    * If the strandedness is mixed throughout the SNPs, then the pipeline tries to infer the strand heuristically if Effect Allele Frequency is provided. If the MAF of that SNP is below a chosen threshold, the Alternative and Effect Allele Frequencies are compared. If the Alternative and the Effect alleles are both either Minor or Major alleles, positive strand is assumed, otherwise negative strand is assumed.
   * Perform Liftover to desired genome build, + sense strand.
 * Output summ stat qc and description file:
   * How many SNPs were kept.
